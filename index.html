@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fajji Restaurant | Casual Italian Dining</title>
+    <meta name="description" content="Welcome to Fajji Restaurant, your home for authentic and casual Italian dining.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">Fajji<span>'s</span></a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#reservations" class="btn-primary">Book a Table</a></li>
+            </ul>
+            <div class="mobile-menu-btn" id="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Welcome to Fajji's</h1>
+            <p>Authentic Italian flavors in a warm, casual setting.</p>
+            <a href="#reservations" class="btn-large">Reserve Your Table</a>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="menu-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Menu</h2>
+                <p>Taste the tradition in every bite.</p>
+            </div>
+            
+            <div class="menu-grid">
+                <!-- Pizza Category -->
+                <div class="menu-category">
+                    <div class="category-img-container">
+                        <img src="assets/pizza.png" alt="Wood-fired Margherita Pizza" class="category-img">
+                    </div>
+                    <h3>Wood-Fired Pizzas</h3>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4>Margherita Classico</h4>
+                            <span class="price">$14</span>
+                        </div>
+                        <p>San Marzano tomato sauce, fresh mozzarella, basil.</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4>Diavola</h4>
+                            <span class="price">$16</span>
+                        </div>
+                        <p>Spicy salami, mozzarella, chili flakes.</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4>Quattro Formaggi</h4>
+                            <span class="price">$17</span>
+                        </div>
+                        <p>Mozzarella, gorgonzola, parmesan, provolone.</p>
+                    </div>
+                </div>
+
+                <!-- Pasta Category -->
+                <div class="menu-category">
+                    <div class="category-img-container">
+                        <img src="assets/hero_pasta.png" alt="Authentic Italian Pasta" class="category-img">
+                    </div>
+                    <h3>Fresh Pastas</h3>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4>Spaghetti Carbonara</h4>
+                            <span class="price">$18</span>
+                        </div>
+                        <p>Pancetta, egg yolk, pecorino romano, black pepper.</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4>Penne all'Arrabbiata</h4>
+                            <span class="price">$15</span>
+                        </div>
+                        <p>Spicy tomato sauce, garlic, fresh parsley.</p>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4>Tagliatelle al Ragù</h4>
+                            <span class="price">$19</span>
+                        </div>
+                        <p>Slow-cooked beef and pork meat sauce.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container about-container">
+            <div class="about-text">
+                <h2>Our Story</h2>
+                <p>At Fajji Restaurant, we believe in the magic of simple, fresh ingredients brought together with love. Born out of a passion for sharing authentic Italian meals with family and friends, our doors opened to provide a cozy spot where everyone feels at home.</p>
+                <p>Whether you're here for a quick lunch, a family dinner, or a romantic evening, we promise a dining experience filled with warmth, laughter, and incredible food. Our chefs prepare everything from scratch, daily.</p>
+            </div>
+            <div class="about-image">
+                <img src="assets/interior.png" alt="Fajji Restaurant Interior">
+                <div class="image-accent"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reservations Section -->
+    <section id="reservations" class="reservations-section">
+        <div class="container">
+            <div class="reservation-box">
+                <div class="section-title">
+                    <h2>Book a Table</h2>
+                    <p>Join us for an unforgettable meal.</p>
+                </div>
+                <form id="reservation-form" class="reservation-form">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" required placeholder="John Doe">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" required placeholder="john@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="date">Date</label>
+                            <input type="date" id="date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="time">Time</label>
+                            <input type="time" id="time" required>
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="guests">Number of Guests</label>
+                            <select id="guests">
+                                <option value="1">1 Person</option>
+                                <option value="2" selected>2 People</option>
+                                <option value="3">3 People</option>
+                                <option value="4">4 People</option>
+                                <option value="5+">5+ People</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn-large btn-full">Confirm Reservation</button>
+                    <div id="form-message" class="form-message hidden"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-col">
+                <h3>Fajji<span>'s</span></h3>
+                <p>123 Culinary Ave, Food District<br>Cityville, ST 12345</p>
+            </div>
+            <div class="footer-col">
+                <h3>Hours</h3>
+                <p>Mon - Thu: 11:00 AM - 10:00 PM<br>Fri - Sun: 11:00 AM - 11:00 PM</p>
+            </div>
+            <div class="footer-col">
+                <h3>Contact</h3>
+                <p>Phone: (555) 123-4567<br>Email: hello@fajjitarestaurant.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Fajji Restaurant. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
