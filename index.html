@@ -3,29 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fajji Restaurant | Casual Italian Dining</title>
-    <meta name="description" content="Welcome to Fajji Restaurant, your home for authentic and casual Italian dining.">
+    <title>Fajji's | Luxury Italian Dining</title>
+    <meta name="description" content="Experience authentic Italian flavors at Fajji's in a dark luxury setting.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=15">
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar" id="navbar">
+    <!-- Navigation -->
+    <nav id="navbar">
         <div class="nav-container">
             <a href="#" class="logo">Fajji<span>'s</span></a>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#menu">Menu</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#reservations" class="btn-primary">Book a Table</a></li>
+                <li><a href="#reservations" class="btn-primary-red">Book a Table</a></li>
             </ul>
-            <div class="mobile-menu-btn" id="mobile-menu-btn">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
         </div>
     </nav>
 
@@ -33,73 +28,92 @@
     <section id="home" class="hero">
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h1>Welcome to Fajji's</h1>
+            <h1>Welcome to Fajji Kitchen</h1>
             <p>Authentic Italian flavors in a warm, casual setting.</p>
-            <a href="#reservations" class="btn-large">Reserve Your Table</a>
+            <a href="#reservations" class="btn-primary-red">Reserve Your Table</a>
         </div>
     </section>
 
     <!-- Menu Section -->
-    <section id="menu" class="menu-section">
+    <section id="menu" class="menu-section scene-container">
         <div class="container">
             <div class="section-title">
-                <h2>Our Menu</h2>
-                <p>Taste the tradition in every bite.</p>
+                <h2>The Menu</h2>
             </div>
-            
             <div class="menu-grid">
-                <!-- Pizza Category -->
-                <div class="menu-category">
-                    <div class="category-img-container">
-                        <img src="assets/pizza.png" alt="Wood-fired Margherita Pizza" class="category-img">
+                <!-- Card 1 -->
+                <div class="menu-card tilt-card">
+                    <div class="card-image-wrapper">
+                        <img src="assets/pizza.png" alt="Margherita Classico">
                     </div>
-                    <h3>Wood-Fired Pizzas</h3>
-                    <div class="menu-item">
-                        <div class="menu-item-header">
-                            <h4>Margherita Classico</h4>
+                    <div class="card-content">
+                        <div class="card-header">
+                            <h3>Margherita Classico</h3>
                             <span class="price">$14</span>
                         </div>
-                        <p>San Marzano tomato sauce, fresh mozzarella, basil.</p>
+                        <p>San Marzano tomatoes, fresh mozzarella, basil.</p>
                     </div>
-                    <div class="menu-item">
-                        <div class="menu-item-header">
-                            <h4>Diavola</h4>
+                </div>
+                <!-- Card 2 -->
+                <div class="menu-card tilt-card">
+                    <div class="card-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&q=80&w=800" alt="Diavola">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-header">
+                            <h3>Diavola</h3>
                             <span class="price">$16</span>
                         </div>
                         <p>Spicy salami, mozzarella, chili flakes.</p>
                     </div>
-                    <div class="menu-item">
-                        <div class="menu-item-header">
-                            <h4>Quattro Formaggi</h4>
+                </div>
+                <!-- Card 3 -->
+                <div class="menu-card tilt-card">
+                    <div class="card-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&q=80&w=800" alt="Quattro Formaggi">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-header">
+                            <h3>Quattro Formaggi</h3>
                             <span class="price">$17</span>
                         </div>
                         <p>Mozzarella, gorgonzola, parmesan, provolone.</p>
                     </div>
                 </div>
-
-                <!-- Pasta Category -->
-                <div class="menu-category">
-                    <div class="category-img-container">
-                        <img src="assets/hero_pasta.png" alt="Authentic Italian Pasta" class="category-img">
+                <!-- Card 4 -->
+                <div class="menu-card tilt-card">
+                    <div class="card-image-wrapper">
+                        <img src="assets/gurmet_burger.png" alt="Gourmet Burger">
                     </div>
-                    <h3>Fresh Pastas</h3>
-                    <div class="menu-item">
-                        <div class="menu-item-header">
-                            <h4>Spaghetti Carbonara</h4>
+                    <div class="card-content">
+                        <div class="card-header">
+                            <h3>Gourmet Burger</h3>
                             <span class="price">$18</span>
                         </div>
-                        <p>Pancetta, egg yolk, pecorino romano, black pepper.</p>
+                        <p>Premium beef patty, melting cheese, fresh brioche bun.</p>
                     </div>
-                    <div class="menu-item">
-                        <div class="menu-item-header">
-                            <h4>Penne all'Arrabbiata</h4>
+                </div>
+                <!-- Card 5 -->
+                <div class="menu-card tilt-card">
+                    <div class="card-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?auto=format&fit=crop&q=80&w=800" alt="Penne Arrabbiata">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-header">
+                            <h3>Penne Arrabbiata</h3>
                             <span class="price">$15</span>
                         </div>
                         <p>Spicy tomato sauce, garlic, fresh parsley.</p>
                     </div>
-                    <div class="menu-item">
-                        <div class="menu-item-header">
-                            <h4>Tagliatelle al Ragù</h4>
+                </div>
+                <!-- Card 6 -->
+                <div class="menu-card tilt-card">
+                    <div class="card-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&q=80&w=800" alt="Tagliatelle al Ragù">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-header">
+                            <h3>Tagliatelle al Ragù</h3>
                             <span class="price">$19</span>
                         </div>
                         <p>Slow-cooked beef and pork meat sauce.</p>
@@ -111,58 +125,68 @@
 
     <!-- About Section -->
     <section id="about" class="about-section">
-        <div class="container about-container">
-            <div class="about-text">
-                <h2>Our Story</h2>
-                <p>At Fajji Restaurant, we believe in the magic of simple, fresh ingredients brought together with love. Born out of a passion for sharing authentic Italian meals with family and friends, our doors opened to provide a cozy spot where everyone feels at home.</p>
-                <p>Whether you're here for a quick lunch, a family dinner, or a romantic evening, we promise a dining experience filled with warmth, laughter, and incredible food. Our chefs prepare everything from scratch, daily.</p>
+        <div class="container about-layout">
+            <div class="about-image-wrapper">
+                <img src="assets/interior.png" alt="Interior" class="interior-img">
+                <div class="gold-corner-border"></div>
             </div>
-            <div class="about-image">
-                <img src="assets/interior.png" alt="Fajji Restaurant Interior">
-                <div class="image-accent"></div>
+            <div class="about-text">
+                <h2>Our Legacy</h2>
+                <div class="stats-row">
+                    <div class="stat-item">
+                        <span class="stat-number">12+</span>
+                        <span class="stat-label">Years</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">48</span>
+                        <span class="stat-label">Dishes</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">4.9★</span>
+                        <span class="stat-label">Rating</span>
+                    </div>
+                </div>
+                <p>Welcome to Fajji's, where traditional Italian flavors meet modern culinary artistry. For over a decade, we have been crafting unforgettable dining experiences in an atmosphere of refined luxury.</p>
+                <p>Every dish tells a story of passion, crafted with the finest ingredients and a dedication to perfection. Join us for a taste of Italy, reimagined.</p>
             </div>
         </div>
     </section>
 
-    <!-- Reservations Section -->
-    <section id="reservations" class="reservations-section">
+    <!-- Reservation Section -->
+    <section id="reservations" class="reservation-section">
         <div class="container">
-            <div class="reservation-box">
-                <div class="section-title">
-                    <h2>Book a Table</h2>
-                    <p>Join us for an unforgettable meal.</p>
+            <div class="reservation-container">
+                <div class="reservation-header">
+                    <h2>Book Your Table</h2>
+                    <p>Experience the extraordinary.</p>
                 </div>
-                <form id="reservation-form" class="reservation-form">
+                <form id="reservation-form">
                     <div class="form-grid">
-                        <div class="form-group">
-                            <label for="name">Full Name</label>
-                            <input type="text" id="name" required placeholder="John Doe">
+                        <div class="input-group">
+                            <input type="text" id="name" placeholder="Name" required>
                         </div>
-                        <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" required placeholder="john@example.com">
+                        <div class="input-group">
+                            <input type="email" id="email" placeholder="Email" required>
                         </div>
-                        <div class="form-group">
-                            <label for="date">Date</label>
+                        <div class="input-group">
                             <input type="date" id="date" required>
                         </div>
-                        <div class="form-group">
-                            <label for="time">Time</label>
+                        <div class="input-group">
                             <input type="time" id="time" required>
                         </div>
-                        <div class="form-group full-width">
-                            <label for="guests">Number of Guests</label>
-                            <select id="guests">
-                                <option value="1">1 Person</option>
-                                <option value="2" selected>2 People</option>
-                                <option value="3">3 People</option>
-                                <option value="4">4 People</option>
-                                <option value="5+">5+ People</option>
+                        <div class="input-group full-width">
+                            <select id="guests" required>
+                                <option value="" disabled selected>Select Guests</option>
+                                <option value="1">1 Guest</option>
+                                <option value="2">2 Guests</option>
+                                <option value="3">3 Guests</option>
+                                <option value="4">4 Guests</option>
+                                <option value="5+">5+ Guests</option>
                             </select>
                         </div>
                     </div>
-                    <button type="submit" class="btn-large btn-full">Confirm Reservation</button>
-                    <div id="form-message" class="form-message hidden"></div>
+                    <button type="submit" class="btn-gold-gradient">Confirm Reservation</button>
+                    <div id="success-msg" class="success-message" style="display: none;">Your table has been successfully reserved!</div>
                 </form>
             </div>
         </div>
@@ -172,7 +196,7 @@
     <footer class="footer">
         <div class="container footer-container">
             <div class="footer-col">
-                <h3>Fajji<span>'s</span></h3>
+                <div class="footer-logo">Fajji<span>'s</span></div>
                 <p>123 Culinary Ave, Food District<br>Cityville, ST 12345</p>
             </div>
             <div class="footer-col">
@@ -189,6 +213,6 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=6"></script>
 </body>
 </html>

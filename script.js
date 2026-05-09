@@ -1,76 +1,96 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Mobile Menu Toggle
-    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-    const navLinks = document.querySelector('.nav-links');
+    // 2. 3D Tilt Effect on Menu Cards
+    const cards = document.querySelectorAll('.tilt-card');
 
-    mobileMenuBtn.addEventListener('click', () => {
-        mobileMenuBtn.classList.toggle('active');
-        navLinks.classList.toggle('active');
-    });
+    cards.forEach(card => {
+        card.addEventListener('mousemove', e => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left; // x position within the element
+            const y = e.clientY - rect.top; // y position within the element
+            
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            
+            // Calculate rotation (max 15 degrees)
+            const rotateX = ((y - centerY) / centerY) * -15;
+            const rotateY = ((x - centerX) / centerX) * 15;
 
-    // Close mobile menu when clicking a link
-    document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', () => {
-            mobileMenuBtn.classList.remove('active');
-            navLinks.classList.remove('active');
+            // Apply transform: add translateY(-16px) because this event fires during hover
+            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-16px) scale3d(1.02, 1.02, 1.02)`;
+        });
+
+        card.addEventListener('mouseleave', () => {
+            // Reset transform
+            card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0) scale3d(1, 1, 1)`;
+            card.style.transition = 'transform 0.5s ease, box-shadow 0.5s ease';
+        });
+
+        card.addEventListener('mouseenter', () => {
+            card.style.transition = 'transform 0.1s ease, box-shadow 0.3s ease';
         });
     });
 
-    // Sticky Navbar on Scroll
+    // 3. Form submission prevention & button animation
+    const form = document.getElementById('reservation-form');
+    if (form) {
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const btn = form.querySelector('button');
+            const msg = document.getElementById('success-msg');
+            const originalText = btn.innerText;
+            
+            btn.innerText = 'Processing...';
+            btn.style.opacity = '0.7';
+            btn.style.pointerEvents = 'none';
+            
+            setTimeout(() => {
+                btn.innerText = originalText;
+                btn.style.opacity = '1';
+                btn.style.pointerEvents = 'auto';
+                if(msg) msg.style.display = 'block';
+                form.reset();
+                
+                setTimeout(() => {
+                    if(msg) msg.style.display = 'none';
+                }, 4000);
+            }, 1000);
+        });
+    }
+
+    // 4. Scroll Reveal Animations (Intersection Observer)
+    const revealElements = document.querySelectorAll('.reveal-3d');
+    
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target); // Only animate once
+            }
+        });
+    }, {
+        root: null,
+        threshold: 0.1, // Trigger when 10% visible
+        rootMargin: '0px 0px -50px 0px' // Slightly offset so it triggers right before view
+    });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+
+    // 5. Navbar Scroll Effect
     const navbar = document.getElementById('navbar');
+    const navLinks = navbar.querySelectorAll('a:not(.btn-primary-red)');
+    const logo = navbar.querySelector('.logo');
     
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
+            navbar.style.background = 'rgba(35, 107, 67, 0.95)'; /* Dark seagreen */
+            navbar.style.boxShadow = '0 4px 20px rgba(0,0,0,0.15)';
+            navLinks.forEach(a => a.style.color = '#ffffff');
+            logo.style.color = '#ffffff';
         } else {
-            navbar.classList.remove('scrolled');
+            navbar.style.background = 'transparent';
+            navbar.style.boxShadow = 'none';
+            navLinks.forEach(a => a.style.color = '#ffffff');
+            logo.style.color = '#ffffff';
         }
     });
-
-    // Set minimum date for reservation to today
-    const dateInput = document.getElementById('date');
-    if(dateInput) {
-        const today = new Date().toISOString().split('T')[0];
-        dateInput.setAttribute('min', today);
-    }
-
-    // Reservation Form Handling
-    const reservationForm = document.getElementById('reservation-form');
-    const formMessage = document.getElementById('form-message');
-
-    if (reservationForm) {
-        reservationForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            
-            // Get form values (could be used to send to a backend)
-            const name = document.getElementById('name').value;
-            const date = document.getElementById('date').value;
-            const time = document.getElementById('time').value;
-            const guests = document.getElementById('guests').value;
-
-            // Simulate form submission process
-            const submitBtn = reservationForm.querySelector('button[type="submit"]');
-            const originalBtnText = submitBtn.innerText;
-            submitBtn.innerText = 'Confirming...';
-            submitBtn.disabled = true;
-
-            setTimeout(() => {
-                // Show success message
-                reservationForm.reset();
-                formMessage.classList.remove('hidden');
-                formMessage.classList.add('success');
-                formMessage.innerText = `Grazie, ${name}! Your table for ${guests} on ${date} at ${time} has been successfully reserved. We look forward to seeing you.`;
-                
-                // Reset button
-                submitBtn.innerText = originalBtnText;
-                submitBtn.disabled = false;
-
-                // Hide message after 8 seconds
-                setTimeout(() => {
-                    formMessage.classList.add('hidden');
-                    formMessage.classList.remove('success');
-                }, 8000);
-            }, 1500);
-        });
-    }
 });
